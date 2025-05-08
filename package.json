@@ -63,7 +63,6 @@
   "devDependencies": {
     "@player.style/demuxed-2022": "0.1.1",
     "@player.style/halloween": "0.1.1",
-    "@player.style/x-mas": "0.1.1",
     "@player.style/instaplay": "0.1.1",
     "@player.style/microvideo": "0.1.1",
     "@player.style/minimal": "0.1.1",
@@ -74,6 +73,7 @@
     "@player.style/tailwind-audio": "0.0.12",
     "@player.style/vimeonova": "0.1.1",
     "@player.style/winamp": "0.0.12",
+    "@player.style/x-mas": "0.1.1",
     "@player.style/yt": "0.1.1",
     "chokidar-cli": "^3.0.0",
     "eslint": "^8.57.0",
