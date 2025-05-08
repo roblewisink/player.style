@@ -80,7 +80,21 @@ export async function build() {
       external: ['react', './media-theme.js'],
       outdir: './dist',
       allowOverwrite: true,
+      plugins: [
+        {
+          name: 'cdn-imports',
+          setup(build) {
+            build.onResolve({ filter: /^media-chrome$/ }, () => {
+              return {
+                path: 'https://cdn.jsdelivr.net/npm/media-chrome/+esm',
+                external: true,
+              };
+            });
+          }
+        }
+      ]
     });
+    
 
     // Build CJS files
     await mkdir('./dist/cjs', { recursive: true });
