@@ -39,3 +39,7 @@ next-env.d.ts
 dist/
 node_modules/
 site/.content-collections/
+
+# Allow minimal-vert theme build to be committed
+!themes/minimal-vert/dist/
+!themes/minimal-vert/dist/**
