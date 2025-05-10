@@ -310,8 +310,8 @@
     </div>
   </template>
 
-  <template if="streamtype == 'on-demand'">
-    <template if="streamtype == 'on-demand'">
+  <template>
+    <template>
       <media-control-bar>
         {{>PlayButton}}
         {{>SeekBackwardButton}}
@@ -329,27 +329,6 @@
         {{>FullscreenButton}}
       </media-control-bar>
     </template>
-  </template>
-
-  <template if="streamtype == 'live'">
-    <media-control-bar>
-      <div class="live-controls-left">
-        {{>LiveButton}}
-        <template if="!targetlivewindow">
-          <template if="breakpointsm">
-            <media-time-display></media-time-display>
-          </template>
-        </template>
-      </div>
-      <template if="targetlivewindow > 0">
-        <template if="breakpointsm">{{>TimeRange}}</template>
-      </template>
-      <div class="live-controls-right">
-        <template if="targetlivewindow > 0"> {{>SeekBackwardButton}} {{>SeekForwardButton}} </template>
-        {{>MuteButton}} {{>VolumeRange}} {{>CaptionsButton}} {{>AirplayButton}} {{>CastButton}} {{>PipButton}}
-        {{>FullscreenButton}}
-      </div>
-    </media-control-bar>
   </template>
 
   <slot></slot>
