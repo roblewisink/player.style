@@ -55,9 +55,12 @@
   }
 
   media-controller:not([media-can-autohide]) media-control-bar {
-  display: flex;
-  opacity: 1;
-}
+    opacity: 1 !important;
+    display: flex !important;
+    visibility: visible !important;
+    pointer-events: auto;
+  }
+
 
 
   media-control-bar {
