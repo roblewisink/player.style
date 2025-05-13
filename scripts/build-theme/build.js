@@ -27,8 +27,8 @@ export async function build() {
   // read name from package.json
   const { name } = JSON.parse(await readFile('./package.json', 'utf8'));
 
-  if (name.startsWith('@player.style/')) {
-    const themeName = name.replace('@player.style/', '');
+  if (name.startsWith('@player.style/') || name.startsWith('@roblewisink/')) {
+    const themeName = name.replace('@player.style/', '').replace('@roblewisink/','');
 
     await mkdir('./dist', { recursive: true });
 

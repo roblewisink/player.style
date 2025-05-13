@@ -1,10 +1,10 @@
 /*
-<media-theme-notflix>
+<media-theme-notflix-vert>
   <video
     slot="media"
     src="https://stream.mux.com/fXNzVtmtWuyz00xnSrJg4OJH6PyNo6D02UzmgeKGkP5YQ/high.mp4"
   ></video>
-</media-theme-notflix>
+</media-theme-notflix-vert>
 */
 
 import 'media-chrome';
@@ -33,17 +33,6 @@ if (template) {
         font-size: var(--media-font-size);
       }
 
-      media-controller[breakpointmd] {
-        --media-font-size: 12px;
-      }
-
-      media-controller[breakpointlg] {
-        --media-font-size: 14px;
-      }
-
-      media-controller[breakpointxl] {
-        --media-font-size: 16px;
-      }
 
       media-time-range,
       media-volume-range {
@@ -109,11 +98,6 @@ if (template) {
         overflow: hidden;
       }
 
-      media-controller[breakpointmd] .control-bar-title {
-        width: auto;
-        padding-right: 15%;
-      }
-
       .media-volume-wrapper {
         position: relative;
       }
@@ -167,11 +151,6 @@ if (template) {
         border-radius: 2px;
       }
 
-      [breakpointmd] [role='menu'] {
-        margin-bottom: 25px;
-        right: 15px;
-      }
-
       [role='menu'] [slot='header'] {
         padding: 0.4em 2em 0 1em;
         font-weight: 500;
@@ -200,7 +179,6 @@ if (template) {
       hotkeys="{{hotkeys}}"
       nohotkeys="{{nohotkeys}}"
       defaultstreamtype="on-demand"
-      breakpoints="sm:384 md:576 lg:768 xl:1440"
     >
       <slot name="media" slot="media"></slot>
       <slot name="poster" slot="poster"></slot>
@@ -298,6 +276,7 @@ if (template) {
         <media-captions-menu anchor="auto" hidden>
           <div slot="header">Subtitles</div>
         </media-captions-menu>
+        <media-pip-button></media-pip-button>
         <media-fullscreen-button>
           <svg aria-hidden="true" slot="enter" role="img" viewBox="0 0 24 24">
             <path
@@ -320,12 +299,12 @@ if (template) {
   `;
 }
 
-class MediaThemeNotflixElement extends MediaThemeElement {
+class MediaThemeNotflixVertElement extends MediaThemeElement {
   static template = template;
 }
 
-if (globalThis.customElements && !globalThis.customElements.get('media-theme-notflix')) {
-  globalThis.customElements.define('media-theme-notflix', MediaThemeNotflixElement);
+if (globalThis.customElements && !globalThis.customElements.get('media-theme-notflix-vert')) {
+  globalThis.customElements.define('media-theme-notflix-vert', MediaThemeNotflixVertElement);
 }
 
-export default MediaThemeNotflixElement;
+export default MediaThemeNotflixVertElement;

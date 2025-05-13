@@ -16,17 +16,6 @@
     font-size: var(--media-font-size);
   }
 
-  media-controller[breakpointmd] {
-    --media-font-size: 12px;
-  }
-
-  media-controller[breakpointlg] {
-    --media-font-size: 14px;
-  }
-
-  media-controller[breakpointxl] {
-    --media-font-size: 16px;
-  }
 
   media-time-range,
   media-volume-range {
@@ -92,11 +81,6 @@
     overflow: hidden;
   }
 
-  media-controller[breakpointmd] .control-bar-title {
-    width: auto;
-    padding-right: 15%;
-  }
-
   .media-volume-wrapper {
     position: relative;
   }
@@ -150,11 +134,6 @@
     border-radius: 2px;
   }
 
-  [breakpointmd] [role='menu'] {
-    margin-bottom: 25px;
-    right: 15px;
-  }
-
   [role='menu'] [slot='header'] {
     padding: 0.4em 2em 0 1em;
     font-weight: 500;
@@ -183,7 +162,6 @@
   hotkeys="{{hotkeys}}"
   nohotkeys="{{nohotkeys}}"
   defaultstreamtype="on-demand"
-  breakpoints="sm:384 md:576 lg:768 xl:1440"
 >
   <slot name="media" slot="media"></slot>
   <slot name="poster" slot="poster"></slot>
@@ -281,6 +259,7 @@
     <media-captions-menu anchor="auto" hidden>
       <div slot="header">Subtitles</div>
     </media-captions-menu>
+    <media-pip-button></media-pip-button>
     <media-fullscreen-button>
       <svg aria-hidden="true" slot="enter" role="img" viewBox="0 0 24 24">
         <path

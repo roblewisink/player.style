@@ -1,7 +1,7 @@
-import MediaThemeNotflixElement from './media-theme.js';
+import MediaThemeNotflixVertElement from './media-theme.js';
 
-declare const MediaThemeNotflix: React.ForwardRefExoticComponent<
-  React.DetailedHTMLProps<React.HTMLAttributes<MediaThemeNotflixElement>, MediaThemeNotflixElement>
+declare const MediaThemeNotflixVert: React.ForwardRefExoticComponent<
+  React.DetailedHTMLProps<React.HTMLAttributes<MediaThemeNotflixVertElement>, MediaThemeNotflixVertElement>
 >;
 
-export default MediaThemeNotflix;
+export default MediaThemeNotflixVert;

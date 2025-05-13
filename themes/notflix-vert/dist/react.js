@@ -139,7 +139,7 @@ function setProperty(node, name, value) {
 // dist/react.js
 var react_default = createComponent({
   react: React,
-  tagName: "media-theme-notflix",
+  tagName: "media-theme-notflix-vert",
   elementClass: ThemeElement
 });
 export {

@@ -167,7 +167,7 @@ function setProperty(node, name, value) {
 }
 var react_default = createComponent({
   react: import_react.default,
-  tagName: "media-theme-notflix",
+  tagName: "media-theme-notflix-vert",
   elementClass: import_media_theme.default
 });
 /*! Bundled license information:

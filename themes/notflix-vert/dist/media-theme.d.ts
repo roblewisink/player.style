@@ -2,12 +2,12 @@ import { MediaThemeElement } from 'media-chrome/dist/media-theme-element.js';
 
 declare global {
   interface HTMLElementTagNameMap {
-   'media-theme-notflix': MediaThemeNotflixElement;
+   'media-theme-notflix-vert': MediaThemeNotflixVertElement;
   }
 }
 
-declare class MediaThemeNotflixElement extends MediaThemeElement {
+declare class MediaThemeNotflixVertElement extends MediaThemeElement {
   static template: HTMLTemplateElement;
 }
 
-export default MediaThemeNotflixElement;
+export default MediaThemeNotflixVertElement;
