@@ -16,36 +16,6 @@
     --media-tooltip-display: none;
   }
 
-  /* always show all controls, even at small breakpoints */
-  media-controller[ignore-breakpoints] media-control-bar
-    media-play-button,
-  media-controller[ignore-breakpoints] media-control-bar
-    media-seek-backward-button,
-  media-controller[ignore-breakpoints] media-control-bar
-    media-seek-forward-button,
-  media-controller[ignore-breakpoints] media-control-bar
-    media-time-range,
-  media-controller[ignore-breakpoints] media-control-bar
-    media-time-display,
-  media-controller[ignore-breakpoints] media-control-bar
-    media-mute-button,
-  media-controller[ignore-breakpoints] media-control-bar
-    media-volume-range,
-  media-controller[ignore-breakpoints] media-control-bar
-    media-captions-button,
-  media-controller[ignore-breakpoints] media-control-bar
-    media-airplay-button,
-  media-controller[ignore-breakpoints] media-control-bar
-    media-cast-button,
-  media-controller[ignore-breakpoints] media-control-bar
-    media-pip-button,
-  media-controller[ignore-breakpoints] media-control-bar
-    media-fullscreen-button,
-  media-controller[ignore-breakpoints] media-control-bar
-    media-live-button {
-    display: inline-flex !important;
-  }
-
   /* The biggest size controller is tied to going fullscreen
       instead of a player width */
   media-controller[mediaisfullscreen] {
@@ -58,14 +28,14 @@
 
   .yt-button {
     position: relative;
-    display: inline-block;
+    /* display: inline-block; */
     width: 36px;
     padding: 0 2px;
     height: 100%;
     opacity: 0.9;
     transition: opacity 0.1s cubic-bezier(0.4, 0, 1, 1);
   }
-  media-controller[breakpointmd] .yt-button {
+  media-controller[breakpointmd]:not([ignore-breakpoints]) .yt-button {
     width: 48px;
   }
   media-controller[mediaisfullscreen] .yt-button {
@@ -198,7 +168,7 @@
       --media-range-track-height: 5px;
       --media-range-thumb-transform: scale(1) translate(0%, 0%);
     }
-    media-controller[breakpointmd] media-time-range {
+    media-controller[breakpointmd]:not([ignore-breakpoints]) media-time-range {
       bottom: 47px;
     }
     media-controller[mediaisfullscreen] media-time-range {
@@ -237,7 +207,7 @@
       left: 12px;
       right: 12px;
     }
-    media-controller[breakpointmd] media-control-bar {
+    media-controller[breakpointmd]:not([ignore-breakpoints]) media-control-bar {
       height: 48px;
       line-height: 48px;
     }

@@ -24,15 +24,6 @@
     }
   }
 
-  media-controller:not([media-can-autohide]) media-control-bar {
-    opacity: 1 !important;
-    display: flex !important;
-    visibility: visible !important;
-    pointer-events: auto;
-  }
-
-
-
   media-control-bar {
     --media-control-padding: 2px;
     background: var(--_secondary-color);
@@ -77,7 +68,7 @@
     cursor: not-allowed;
   }
 
-  /* Turn some buttons off by default */
+  ${/* Turn some buttons off by default */''}
   media-seek-backward-button {
     display: var(--media-control-display, var(--media-seek-backward-button-display, none));
   }
@@ -280,25 +271,44 @@
     </div>
   </template>
 
-  <template>
-    <template>
+  <template if="streamtype == 'on-demand'">
+    <template if="!breakpointsm">
       <media-control-bar>
-        {{>PlayButton}}
-        {{>SeekBackwardButton}}
-        {{>SeekForwardButton}}
-        {{>TimeRange}}
+        {{>PlayButton}} {{>TimeRange}} {{>MuteButton}} {{>CaptionsButton}} {{>FullscreenButton}}
+      </media-control-bar>
+    </template>
+
+    <template if="breakpointsm">
+      <media-control-bar>
+        {{>PlayButton}} {{>SeekBackwardButton}} {{>SeekForwardButton}} {{>TimeRange}}
         <template if="breakpointmd">
           <media-time-display></media-time-display>
         </template>
-        {{>MuteButton}}
-        {{>VolumeRange}}
-        {{>CaptionsButton}}
-        {{>AirplayButton}}
-        {{>CastButton}}
-        {{>PipButton}}
+        {{>MuteButton}} {{>VolumeRange}} {{>CaptionsButton}} {{>AirplayButton}} {{>CastButton}} {{>PipButton}}
         {{>FullscreenButton}}
       </media-control-bar>
     </template>
+  </template>
+
+  <template if="streamtype == 'live'">
+    <media-control-bar>
+      <div class="live-controls-left">
+        {{>LiveButton}}
+        <template if="!targetlivewindow">
+          <template if="breakpointsm">
+            <media-time-display></media-time-display>
+          </template>
+        </template>
+      </div>
+      <template if="targetlivewindow > 0">
+        <template if="breakpointsm">{{>TimeRange}}</template>
+      </template>
+      <div class="live-controls-right">
+        <template if="targetlivewindow > 0"> {{>SeekBackwardButton}} {{>SeekForwardButton}} </template>
+        {{>MuteButton}} {{>VolumeRange}} {{>CaptionsButton}} {{>AirplayButton}} {{>CastButton}} {{>PipButton}}
+        {{>FullscreenButton}}
+      </div>
+    </media-control-bar>
   </template>
 
   <slot></slot>

@@ -1,17 +1,17 @@
 {
-  "name": "@roblewisink/notflix-vert",
-  "version": "0.0.4",
-  "description": "This is a vertical mod for the player theme inspired by Netflix's video player.",
-  "author": "@heff",
+  "name": "@roblewisink/basic",
+  "version": "0.1.1",
+  "description": "This theme is a basic media chrome theme.",
+  "author": "@roblewisink",
   "license": "MIT",
-  "homepage": "https://github.com/muxinc/player.style#readme",
+  "homepage": "https://github.com/roblewisink/player.style#readme",
   "bugs": {
-    "url": "https://github.com/muxinc/player.style/issues"
+    "url": "https://github.com/roblewisink/player.style/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/muxinc/player.style.git",
-    "directory": "themes/notflix-vert"
+    "url": "git+https://github.com/roblewisink/player.style.git",
+    "directory": "themes/basic"
   },
   "files": [
     "dist"
